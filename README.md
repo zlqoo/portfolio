@@ -87,5 +87,4 @@ python3 -m http.server 8000
 ### 注意事项
 
 - 站点引用的 `assets/pdf/pages-*/` 为详情页渲染图（76 张 PNG，单张均 < 5MB），已纳入仓库；Cloudflare Pages 单文件上限 25MB、单次部署文件数上限 2000，当前体量无压力。
-- `assets/img/hero-bg.jpg`（首屏视频封面）目前缺失，仅影响视频加载前的一瞬；`assets/img/figure.png` 为无引用废文件，可清理。
-- 第二屏背景 `assets/img/experience-bg.jpg` 为占位图，日后可换成真实照片。
+- 首屏视频封面 `assets/img/hero-bg.jpg`、第二屏背景 `assets/img/experience-bg.jpg` 均为 AI 生成的暗调占位图，日后可换成真实照片。
