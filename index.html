@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="vlzNtVd3Z8R1GGbkro08wo">
+<head data-page-node-id="aGedRuVqyyx78a1elxRGdV">
+  <meta charset="UTF-8" data-page-node-id="VUpcC51I8uJAPvDKYc0lKT" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="TNJQbd1E0wAlTdALiqZeb2" />
+  <title>zlq — 交互 / UI 设计师作品集</title>
+  <meta name="description" content="交互与 UI 设计师个人作品集 — 工作经历、项目作品与联系方式。" data-page-node-id="86598WNI2zpDKvbA6Rordp" />
+
+  <!-- 字体（在线加载，离线时自动回退到系统字体） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="60ncUEm5rzWA9rsXeRfWM2" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="jjcx6SaRGp5u5Fdb6qO6XL" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,600&family=Archivo:wght@500;600;700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" data-page-node-id="63Wz6gJX34XNHQLoHXbdKe" />
+
+  <link rel="stylesheet" href="assets/css/style.css" data-page-node-id="KQfrPKj3o3B0KpmG8dLaUf" />
+</head>
+<body data-page-node-id="1iW3LIcVFEWJm3eE47hbu9">
+
+  <!-- 加载动画 -->
+  <div class="loader" id="loader" data-page-node-id="1jSDuwMPxf9PfNm7rHslHY">
+    <div class="loader__inner" data-page-node-id="4AkJZ5fdlOPV5pD5ftxJKs">
+      <span class="loader__word" data-page-node-id="AhDrdKKOMwrliAkKJMnQO5">PORTFOLIO</span>
+      <div class="loader__bar" data-page-node-id="NLZqc1lkEQyKReNqA2ALoJ"><i id="loaderBar" data-page-node-id="5qDoZhEh4N5j2NDN3dOETh"></i></div>
+    </div>
+  </div>
+
+  <!-- 自定义光标 -->
+  <div class="cursor" id="cursor" data-page-node-id="5z5TF3uyce2LpD1brMIqkE"></div>
+  <div class="cursor-dot" id="cursorDot" data-page-node-id="1ZOtOU56AAUBWGiTIZAKKz"></div>
+
+  <!-- 滚动进度条 -->
+  <div class="scroll-progress" id="scrollProgress" data-page-node-id="5LS013JvF4h3Mg37ZYrHWU"></div>
+
+  <!-- 导航 -->
+  <header class="nav" id="nav" data-page-node-id="aUy0GUt3ma1JKaEN6jU5sC">
+    <a href="#hero" class="nav__logo" data-cursor="hover" data-page-node-id="xjApo3QJUHmOLDpFw9RGpT">zlq<span class="dot" data-page-node-id="sAstsEDXuXwzqt92Q1Lv9n">.</span></a>
+    <nav class="nav__links" id="navLinks" data-page-node-id="rX29RnBStNfU9dqbI1ywUu">
+      <a href="#hero" class="nav__link is-active" data-cursor="hover" data-page-node-id="DzXuUJjDj1O52Jq3ck1Kl0">首页 <i data-page-node-id="PR6Yg2vvXkwjpHNfMDrzn9">/ Home</i></a>
+      <a href="#experience" class="nav__link" data-cursor="hover" data-page-node-id="CPUdAYQ05YDNwYO6oPPVdP">经历 <i data-page-node-id="JLjS2SehdHnUjivx1LscPs">/ Experience</i></a>
+      <a href="#work" class="nav__link" data-cursor="hover" data-page-node-id="nvC6R6Ly05UnLU30htA0eg">作品 <i data-page-node-id="EA7x2JjDTMkEIKCSGd4NcM">/ Works</i></a>
+      <a href="#contact" class="nav__link" data-cursor="hover" data-page-node-id="OGkLZTBS6IHGaR78lD5vQo">联系 <i data-page-node-id="AvMatV7GcHTz2NjtmQt3M6">/ Contact</i></a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="菜单" data-page-node-id="FcZxlTn8r1qDBCJanOTl1V">
+      <span data-page-node-id="YoPIQuAygATl9qGjD2bifZ"></span><span data-page-node-id="YaBGeM2S1GY6GPj48wXahe"></span>
+    </button>
+  </header>
+
+  <main data-page-node-id="Fu19QXbnP3hxVB1CMHNvdm">
+    <!-- ============ 第一屏：首屏（全屏背景 + 多图漂浮 + 巨型标题） ============ -->
+    <section class="hero" id="hero" data-page-node-id="IW0bX6RZB3VV62o5HXItth">
+      <!-- 全屏背景视频（循环自动播放，assets/video/hero-bg.mp4；poster 用 hero-bg.jpg 兜底） -->
+      <div class="hero__bg" aria-hidden="true">
+        <video class="hero__bg-media" id="heroVideo" autoplay muted playsinline
+               poster="assets/img/hero-bg.jpg"
+               onerror="this.parentElement.classList.add('is-empty')">
+          <source src="assets/video/hero-bg.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__bg-ph">BACKGROUND VIDEO</div>
+        <div class="hero__shade"></div>
+      </div>
+
+      <div class="hero__stage" id="heroStage">
+        <!-- 顶部行 -->
+        <div class="hero__top">
+          <p class="hero__brand reveal" data-reveal>DESIGN</p>
+        </div>
+
+        <!-- 巨型标题（叠压在图片之上/之下，z 层交错） -->
+        <h1 class="hero__title">
+          <span class="reveal-line"><span data-scramble>INTERACTI</span><span class="t-accent">O</span><span data-scramble>N</span></span>
+          <span class="reveal-line"><span class="hero__title-indent"><span data-scramble>U</span><span class="t-accent">I</span><span data-scramble> DESIGNER</span></span></span>
+        </h1>
+
+        <!-- 漂浮图片组（替换 assets/img/hero-1.jpg ~ hero-4.jpg） -->
+        <figure class="hero-shot hero-shot--a" style="--i:0">
+          <div class="hero-shot__frame" data-reveal>
+            <img src="assets/img/hero-1.jpg" alt="作品图一"
+                 onerror="this.style.display='none';this.parentElement.classList.add('is-empty')" />
+            <span class="hero-shot__ph">HERO IMAGE 01</span>
+            <div class="hero-shot__overlay">
+              <ul class="hero-shot__bio">
+                <li>10+ 年 UI / 交互设计经验，主导多款 B/C 端系统、小程序与 App 的从 0 到 1 全链路设计及重构迭代。覆盖 AI 大数据分析、商业医疗保险、燃气水务、技术服务等多元行业；</li>
+                <li>具备 2–3 年团队管理经验，擅长设计规范沉淀与跨团队协作。</li>
+                <li>熟练运用 AI 工作流提效，将 AI Coding 等智能化能力贯穿设计到落地的全流程。</li>
+              </ul>
+            </div>
+          </div>
+          <figcaption class="hero-shot__cap reveal" data-reveal>FUTURE</figcaption>
+        </figure>
+
+        <figure class="hero-shot hero-shot--b" style="--i:1">
+          <div class="hero-shot__frame" data-reveal>
+            <img src="assets/img/hero-2.jpg" alt="作品图二"
+                 onerror="this.style.display='none';this.parentElement.classList.add('is-empty')" />
+            <span class="hero-shot__ph">HERO IMAGE 02</span>
+            <div class="hero-shot__overlay">
+              <ul class="hero-shot__bio">
+                <li>10+ 年 UI / 交互设计经验，主导多款 B/C 端系统、小程序与 App 的从 0 到 1 全链路设计及重构迭代。覆盖 AI 大数据分析、商业医疗保险、燃气水务、技术服务等多元行业；</li>
+                <li>具备 2–3 年团队管理经验，擅长设计规范沉淀与跨团队协作。</li>
+                <li>熟练运用 AI 工作流提效，将 AI Coding 等智能化能力贯穿设计到落地的全流程。</li>
+              </ul>
+            </div>
+          </div>
+          <figcaption class="hero-shot__cap reveal" data-reveal>周立俏-交互ui设计</figcaption>
+        </figure>
+
+        <!-- 底部居中：滚动引导（弹跳箭头 + 扩散脉冲） -->
+        <button class="hero__scroll" id="heroScroll" type="button" aria-label="向下滚动查看作品经历">
+          <span class="hero__scroll-chev" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ 第二屏：工作经历（全屏背景图 + 左上大标题 + 右下手风琴列表） ============ -->
+    <section class="experience" id="experience" data-page-node-id="qBpzT84H6PXm33lBqKu32a">
+      <!-- 全屏背景图（替换 assets/img/experience-bg.jpg，建议暗调、主体居左） -->
+      <div class="experience__bg" aria-hidden="true">
+        <img src="assets/img/experience-bg.jpg" alt=""
+             onerror="this.style.display='none';this.parentElement.classList.add('is-empty')" />
+        <div class="experience__bg-ph"></div>
+        <div class="experience__shade"></div>
+      </div>
+
+      <!-- 左侧中部：动态视频（循环自动播放，替换 assets/video/experience-video.mp4） -->
+      <div class="experience__media" aria-hidden="true">
+        <video class="experience__video" id="expVideo" autoplay muted loop playsinline
+               onerror="this.parentElement.classList.add('is-empty')">
+          <source src="assets/video/experience-video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="experience__inner">
+        <!-- 左上大标题 -->
+        <h2 class="experience__title">
+          <span class="reveal-line"><span class="t-accent">E</span><span data-scramble>xperience</span></span>
+          <span class="reveal-line"><span data-scramble>Selected</span> <span class="t-accent">P</span><span data-scramble>rojects</span></span>
+        </h2>
+
+        <!-- 右下：紧凑手风琴经历列表（默认展开第一条） -->
+        <ol class="timeline">
+          <li class="timeline__item is-open reveal" data-reveal>
+            <button class="timeline__head" type="button" aria-expanded="true">
+              <span class="timeline__no">01</span>
+              <span class="timeline__company">蚂蚁集团外协（博彦科技）</span>
+              <span class="timeline__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="timeline__panel">
+              <div class="timeline__panel-in">
+                <div class="timeline__meta">
+                  <span class="timeline__role">用户体验设计 · UI / UX</span>
+                  <span class="timeline__period">2023.05 — 2026.09</span>
+                </div>
+                <ol class="timeline__list">
+                  <li>独立负责公司数据分析产品 3 个核心模块的端到端交互设计，主导多轮体验优化迭代；通过用户路径梳理与竞品分析重新定义核心任务流，关键操作路径优化，任务完成率提高了 35%。</li>
+                  <li>从 0 到 1 沉淀数据产品线设计规范与组件库，降低开发还原成本、缩短设计交付周期约 30%。</li>
+                  <li>作为设计侧横向支撑多条业务线（钉钉客户端、HR 工作平台等），独立承接 3 个跨团队项目，与 PM / 研发协作推进落地，获业务方好评。</li>
+                </ol>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal" data-reveal>
+            <button class="timeline__head" type="button" aria-expanded="false">
+              <span class="timeline__no">02</span>
+              <span class="timeline__company">海康威视外协（捷程易信）</span>
+              <span class="timeline__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="timeline__panel">
+              <div class="timeline__panel-in">
+                <div class="timeline__meta">
+                  <span class="timeline__role">用户体验设计 · UI / UX</span>
+                  <span class="timeline__period">2022.09 — 2023.04</span>
+                </div>
+                <ol class="timeline__list">
+                  <li>全链路负责国内技服业务的体验设计，对接技服业务线的 BA（产品）；优化交互文档、输出 UI，跟进开发并协同验收，输出验收文档等。</li>
+                  <li>支持国内其它业务线的体验设计工作，覆盖 DMP 国内营销、PC 门户、B2B 商城等业务，统一交互规范并保障多线并行交付。</li>
+                </ol>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal" data-reveal>
+            <button class="timeline__head" type="button" aria-expanded="false">
+              <span class="timeline__no">03</span>
+              <span class="timeline__company">米家健康集团</span>
+              <span class="timeline__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="timeline__panel">
+              <div class="timeline__panel-in">
+                <div class="timeline__meta">
+                  <span class="timeline__role">用户体验设计 · UI / UX</span>
+                  <span class="timeline__period">2021.08 — 2022.08</span>
+                </div>
+                <ol class="timeline__list">
+                  <li>负责公司核心 SaaS 产品「医疗理赔审核系统」的体验设计，重新梳理复杂理赔业务逻辑与审核流程，结合业务目标对核心模块进行重构设计；关键审核链路操作步骤优化，审核人均处理效率提升 30% 左右。</li>
+                  <li>从 0 到 1 主导新型业务「小额快赔小程序」的 UI 与交互设计，深入理赔业务场景梳理用户旅程与核心流程，保障设计落地，支撑业务快速上线验证。</li>
+                  <li>制定并沉淀产品级设计规范，推动设计组件库落地，统一多产品交互与视觉语言，降低设计与开发协作成本。</li>
+                </ol>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal" data-reveal>
+            <button class="timeline__head" type="button" aria-expanded="false">
+              <span class="timeline__no">04</span>
+              <span class="timeline__company">金卡智能集团股份有限公司</span>
+              <span class="timeline__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="timeline__panel">
+              <div class="timeline__panel-in">
+                <div class="timeline__meta">
+                  <span class="timeline__role">设计主管 · Design Lead</span>
+                  <span class="timeline__period">2015.07 — 2021.07</span>
+                </div>
+                <ol class="timeline__list">
+                  <li>负责设计部门的日常工作管理协调与主设计执行，培养设计氛围，制定设计规范，提升团队整体设计水平。</li>
+                  <li>与各产品经理密切接触，多产品线并行推进，涵盖产品需求分析、交互模式研究、UI 视觉输出与设计走查。</li>
+                  <li>收集用户反馈及数据，根据实际数据调整页面结构与视觉层级，驱动产品的完善与成长。</li>
+                </ol>
+              </div>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal" data-reveal>
+            <button class="timeline__head" type="button" aria-expanded="false">
+              <span class="timeline__no">05</span>
+              <span class="timeline__company">杭州车乐通有限公司</span>
+              <span class="timeline__toggle" aria-hidden="true"></span>
+            </button>
+            <div class="timeline__panel">
+              <div class="timeline__panel-in">
+                <div class="timeline__meta">
+                  <span class="timeline__role">UI 设计 · UI Designer</span>
+                  <span class="timeline__period">2014.07 — 2015.07</span>
+                </div>
+                <ol class="timeline__list">
+                  <li>从 0 到 1 负责 C 端产品「车乐通」App 的 UI 设计，与产品经理深入交流业务、实地调研业务场景，结合具体业务流程完成交互及视觉设计，并组织培训运营人员设备操作流程等相关事项。</li>
+                </ol>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 第三屏：作品集扇形卡片 ============ -->
+    <section class="work" id="work" data-page-node-id="mnBmXAfjwqgOW9Lj67aLc9">
+      <div class="fan" id="fan" aria-label="作品集封面">
+        <div class="fan__slot" data-i="0" style="--i:0">
+          <a class="fan__card" href="portfolio/project-01.html" data-cursor="hover">
+            <div class="fan__img fan__img--1">
+              <span class="fan__tag">01</span>
+              <span class="fan__label">ChatBI<i>AI+对话流数据分析</i></span>
+            </div>
+          </a>
+        </div>
+        <div class="fan__slot" data-i="1" style="--i:1">
+          <a class="fan__card" href="portfolio/project-02.html" data-cursor="hover">
+            <div class="fan__img fan__img--2">
+              <span class="fan__tag">02</span>
+              <span class="fan__label">ChatBI 移动端<i>AI+对话流数据分析简易版</i></span>
+            </div>
+          </a>
+        </div>
+        <div class="fan__slot" data-i="2" style="--i:2">
+          <a class="fan__card" href="portfolio/project-03.html" data-cursor="hover">
+            <div class="fan__img fan__img--3">
+              <span class="fan__tag">03</span>
+              <span class="fan__label">医疗智能审核系统<i>医疗审核+运营COP</i></span>
+            </div>
+          </a>
+        </div>
+        <div class="fan__slot" data-i="3" style="--i:3">
+          <a class="fan__card" href="portfolio/project-04.html" data-cursor="hover">
+            <div class="fan__img fan__img--4">
+              <span class="fan__tag">04</span>
+              <span class="fan__label">小额快赔小程序<i>移动端小额快速理赔场景</i></span>
+            </div>
+          </a>
+        </div>
+        <div class="fan__slot" data-i="4" style="--i:4">
+          <a class="fan__card" href="portfolio/project-05.html" data-cursor="hover">
+            <div class="fan__img fan__img--5">
+              <span class="fan__tag">05</span>
+              <span class="fan__label">海康online小程序<i>技术服务业务线</i></span>
+            </div>
+          </a>
+        </div>
+        <div class="fan__slot" data-i="5" style="--i:5">
+          <a class="fan__card" href="portfolio/project-06.html" data-cursor="hover">
+            <div class="fan__img fan__img--6">
+              <span class="fan__tag">06</span>
+              <span class="fan__label">智慧水务一体化大屏<i>G端公共事业大屏业务</i></span>
+            </div>
+          </a>
+        </div>
+        <div class="fan__slot" data-i="6" style="--i:6">
+          <a class="fan__card" href="portfolio/project-07.html" data-cursor="hover">
+            <div class="fan__img fan__img--7">
+              <span class="fan__tag">07</span>
+              <span class="fan__label">动效、AIGC、插画等<i>其他能力</i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="work__below">
+        <h2 class="work__title reveal" data-reveal>P<span class="t-accent">o</span>rtfolio</h2>
+        <p class="work__sub reveal" data-reveal>点击卡片进入项目详情</p>
+      </div>
+    </section>
+
+    <!-- ============ 第四屏：联系方式 ============ -->
+    <section class="contact" id="contact">
+
+      <!-- 顶部：大名字 + 标语 / 右侧下划线导航 -->
+      <div class="contact__top">
+        <div class="contact__brand reveal" data-reveal>
+          <h2 class="contact__name">周立俏</h2>
+          <p class="contact__tagline">
+            10+ 年 UI / 交互设计经验，主导多款 B/C 端系统、小程序与 App 的从 0 到 1 全链路设计及重构迭代。覆盖 AI 大数据分析、商业医疗保险、燃气水务、技术服务等多元行业；<br>
+            具备 2–3 年团队管理经验，擅长设计规范沉淀与跨团队协作。<br>
+            熟练运用 AI 工作流提效，将 AI Coding 等智能化能力贯穿设计到落地的全流程。
+          </p>
+        </div>
+        <nav class="contact__nav reveal" data-reveal aria-label="页脚导航">
+          <a href="#hero" data-cursor="hover">Home <i>↗</i></a>
+          <a href="#experience" data-cursor="hover">Experience <i>↗</i></a>
+          <a href="#work" data-cursor="hover">Portfolio <i>↗</i></a>
+          <a href="#contact" data-cursor="hover">Contact <i>↗</i></a>
+        </nav>
+      </div>
+
+      <!-- 关键词跑马灯横幅 -->
+      <div class="contact__marquee" aria-hidden="true">
+        <div class="contact__marquee-track">
+          <span class="contact__mi">Brand visual experiences</span><b>✳</b>
+          <span class="contact__mi">Selected work · 2026</span><b>✳</b>
+          <span class="contact__mi">Interaction design</span><b>✳</b>
+          <span class="contact__mi">UI systems</span><b>✳</b>
+          <span class="contact__mi">Motion &amp; prototype</span><b>✳</b>
+          <span class="contact__mi">AI + 3D exploration</span><b>✳</b>
+          <span class="contact__mi">Brand visual experiences</span><b>✳</b>
+          <span class="contact__mi">Selected work · 2026</span><b>✳</b>
+          <span class="contact__mi">Interaction design</span><b>✳</b>
+          <span class="contact__mi">UI systems</span><b>✳</b>
+          <span class="contact__mi">Motion &amp; prototype</span><b>✳</b>
+          <span class="contact__mi">AI + 3D exploration</span><b>✳</b>
+        </div>
+      </div>
+
+      <!-- 主体：左侧两列信息 + 右侧微信二维码 -->
+      <div class="contact__foot">
+        <div class="contact__cols">
+          <div class="contact__col reveal" data-reveal>
+            <h3>个人信息</h3>
+            <dl>
+              <dt>职业</dt><dd>体验设计师（UX/UI）</dd>
+              <dt>方向</dt><dd>交互设计/视觉设计/设计管理</dd>
+              <dt>状态</dt><dd>离职中-随时到岗</dd>
+            </dl>
+          </div>
+          <div class="contact__col reveal" data-reveal>
+            <h3>联系我</h3>
+            <dl>
+              <dt>邮箱</dt><dd>912744642@qq.com</dd>
+              <dt>微信</dt><dd>zhouliqiao1992</dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- 右侧微信二维码（扫一扫加好友） -->
+        <figure class="contact__figure contact__figure--qr reveal" data-reveal>
+          <img src="assets/img/wechat-qr.png" alt="微信二维码" />
+        </figure>
+      </div>
+
+      <!-- 底部版权条 -->
+      <footer class="contact__bar">
+        <span>© <span id="year"></span> zlq · 交互 / UI 设计师</span>
+        <a href="#hero" data-cursor="hover">BACK TO TOP ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

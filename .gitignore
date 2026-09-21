@@ -1,0 +1,8 @@
+# macOS 系统文件
+.DS_Store
+
+# WorkBuddy 项目内部数据（不是网站内容）
+.workbuddy/
+
+# 作品集源 PDF 原稿（站点只引用渲染出的 PNG 图，这些不上传）
+assets/pdf/*-detail.pdf
