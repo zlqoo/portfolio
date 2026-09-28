@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="zh-CN" data-page-node-id="94nDvKgJfyK2NbZV5Mo43l">
+<head data-page-node-id="eClCJYmHIe0O68hi8yMGOR">
+  <meta charset="UTF-8" data-page-node-id="TAIxCrchzC9SqZJft79BEx" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="X5UPWElv7xMzBYKMBo5CCD" />
   <title>动效、AIGC、插画等 — zlq 作品集</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,600&family=Archivo:wght@500;600;700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="XeJhDI71sl45OeYZcgLDYS" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="OY9xyJ0ZRokiz79hbfHPaa" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,600&family=Archivo:wght@500;600;700;800;900&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet" data-page-node-id="Zwg3dObODHw0CR75AsM5rl" />
+  <link rel="stylesheet" href="../assets/css/style.css" data-page-node-id="0NtMxqrVibfADw1ScMtm4V" />
   <style>
     .p-pdf { max-width: 1600px; margin: 0 auto; padding: 116px var(--pad) 40px; }
     .p-pdf__page {
@@ -102,87 +102,107 @@
       .p-pdf, .p-back { padding-right: calc(var(--pad) + 96px); }
     }
     @media (max-width: 1100px){ .p-rail { display: none; } }
+
+    /* ===== 详情页：作品视频展示（延展动图） ===== */
+    .p-video { margin: 16px 0 0; }
+    .p-video__label {
+      font-family: var(--sans); font-size: 12px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+      margin: 10px 0 12px; display: flex; align-items: center; gap: 12px;
+    }
+    .p-video__label::before {
+      content: ""; width: 26px; height: 1px; background: var(--accent); display: inline-block;
+    }
+    .p-video__frame {
+      width: 100%; height: auto; display: block; background: #000;
+      border-radius: 4px; box-shadow: 0 14px 44px rgba(0,0,0,.45);
+    }
   </style>
 </head>
-<body>
+<body data-page-node-id="reMf33s9cj7M8hRHXoAXaV">
   <!-- 右侧页面缩略图导航 -->
-  <nav class="p-rail" id="pRail" aria-label="页面缩略图">
-            <button class="p-rail__btn" type="button" data-target="page-01" aria-label="第 1 页"><img src="../assets/pdf/thumbs-07/page-01.jpg" alt="第 1 页缩略图"><span>01</span></button>
-            <button class="p-rail__btn" type="button" data-target="page-02" aria-label="第 2 页"><img src="../assets/pdf/thumbs-07/page-02.jpg" alt="第 2 页缩略图"><span>02</span></button>
-            <button class="p-rail__btn" type="button" data-target="page-03" aria-label="第 3 页"><img src="../assets/pdf/thumbs-07/page-03.jpg" alt="第 3 页缩略图"><span>03</span></button>
+  <nav class="p-rail" id="pRail" aria-label="页面缩略图" data-page-node-id="XoWPN2V4UzadxthbQIHxZV">
+            <button class="p-rail__btn" type="button" data-target="page-01" aria-label="第 1 页" data-page-node-id="IYi3VzUvCXENCP7z8KKy1A"><img src="../assets/pdf/thumbs-07/page-01.jpg" alt="第 1 页缩略图" data-page-node-id="Ne83Ian0sJTILx40gOqqKd"><span data-page-node-id="C1QwvBy0jZ2xu8KOxXgKiZ">01</span></button>
+            <button class="p-rail__btn" type="button" data-target="page-02" aria-label="第 2 页" data-page-node-id="SEi31m1rrEXmdDQuPZZbjn"><img src="../assets/pdf/thumbs-07/page-02.jpg" alt="第 2 页缩略图" data-page-node-id="dwcXwa2eUYcoJr1quXNdhv"><span data-page-node-id="HJLO8QNx4KXChsB27CxaFQ">02</span></button>
+            <button class="p-rail__btn" type="button" data-target="page-03" aria-label="第 3 页" data-page-node-id="uumZi1vpYhxjodRt4ov2Fj"><img src="../assets/pdf/thumbs-07/page-03.jpg" alt="第 3 页缩略图" data-page-node-id="V3pUdHFVZPCgMQ4gJlLeqV"><span data-page-node-id="MNFd9NBZrPBkS7qD2lzPIj">03</span></button>
   </nav>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="scroll-progress" id="scrollProgress"></div>
-      <header class="nav is-scrolled" id="nav">
-    <a href="../index.html" class="nav__logo" data-cursor="hover">zlq<span class="dot">.</span></a>
-    <nav class="nav__detail">
-      <div class="nav__switch" id="navSwitch">
-        <button class="nav__switch-btn" type="button" data-cursor="hover" aria-expanded="false" aria-haspopup="true">
-          <span>切换作品 <i>/ Switch</i></span>
-          <span class="nav__caret" aria-hidden="true"></span>
+  <div class="cursor" id="cursor" data-page-node-id="6GkliRb7L4DFFhbUDaytJn"></div>
+  <div class="cursor-dot" id="cursorDot" data-page-node-id="67ooUWvk3BvpsamzYrVhTv"></div>
+  <div class="scroll-progress" id="scrollProgress" data-page-node-id="9Kqgmp7j2doCMghNozOc1m"></div>
+      <header class="nav is-scrolled" id="nav" data-page-node-id="81XVE4x3dSp628VazyKeJh">
+    <a href="../index.html" class="nav__logo" data-cursor="hover" data-page-node-id="IjLFpMzQUe81zQT7vXNGzL">zlq<span class="dot" data-page-node-id="uhXO8FtvRACGeDV5wjjVLe">.</span></a>
+    <nav class="nav__detail" data-page-node-id="QZECOxQt7rKR06Mj9M1Ml2">
+      <div class="nav__switch" id="navSwitch" data-page-node-id="Dq36HowDbsRRyC3ls3uo4z">
+        <button class="nav__switch-btn" type="button" data-cursor="hover" aria-expanded="false" aria-haspopup="true" data-page-node-id="T50Wi4JBgcUG6Z4GJfY16P">
+          <span data-page-node-id="1XCVnr5Z7OYWX94mjkviG8">切换作品 <i data-page-node-id="pLNHD3j9FnWEisDOkyjT0B">/ Switch</i></span>
+          <span class="nav__caret" aria-hidden="true" data-page-node-id="JVk7LfcRVNMXAZMWtIzHEG"></span>
         </button>
-        <div class="nav__dropdown" id="workDropdown">
-          <a class="sw-card" href="project-01.html" data-cursor="hover">
-            <div class="sw-card__media sw-card__media--01">
-              <span class="sw-card__tag">01</span>
-              <span class="sw-card__label">ChatBI<i>AI+对话流数据分析</i></span>
+        <div class="nav__dropdown" id="workDropdown" data-page-node-id="I4bYorATpHPRWxXqHpDQCY">
+          <a class="sw-card" href="project-01.html" data-cursor="hover" data-page-node-id="zTE6X87h9B6MHLbM1Xi3lO">
+            <div class="sw-card__media sw-card__media--01" data-page-node-id="6g8HaKiq4LkEf5ZQTsJKg3">
+              <span class="sw-card__tag" data-page-node-id="zo71NuPbNVNRhAToOorszT">01</span>
+              <span class="sw-card__label" data-page-node-id="32DeGb7KNQMrWYiFoPMxCH">ChatBI<i data-page-node-id="rRzIfBuVulDB0lU8TsnDVz">AI+对话流数据分析</i></span>
             </div>
           </a>
-          <a class="sw-card" href="project-02.html" data-cursor="hover">
-            <div class="sw-card__media sw-card__media--02">
-              <span class="sw-card__tag">02</span>
-              <span class="sw-card__label">ChatBI 移动端<i>AI+对话流数据分析简易版</i></span>
+          <a class="sw-card" href="project-02.html" data-cursor="hover" data-page-node-id="TMwOubVQ2ejj7lNnHdQL6b">
+            <div class="sw-card__media sw-card__media--02" data-page-node-id="6PGDR02fKakjb44h8FwAuB">
+              <span class="sw-card__tag" data-page-node-id="p5iPyBzf3I2yIaKLaMlDCm">02</span>
+              <span class="sw-card__label" data-page-node-id="tATwJ9aPURApGHmnIJWEAr">ChatBI 移动端<i data-page-node-id="BMnzKUrEZyYHkUMVLk1JWP">AI+对话流数据分析简易版</i></span>
             </div>
           </a>
-          <a class="sw-card" href="project-03.html" data-cursor="hover">
-            <div class="sw-card__media sw-card__media--03">
-              <span class="sw-card__tag">03</span>
-              <span class="sw-card__label">医疗智能审核系统<i>医疗审核+运营COP</i></span>
+          <a class="sw-card" href="project-03.html" data-cursor="hover" data-page-node-id="7aYQoYrdYyaAiNcFxnSStk">
+            <div class="sw-card__media sw-card__media--03" data-page-node-id="b8zM7JYskla4ptO5I39CHe">
+              <span class="sw-card__tag" data-page-node-id="gg1SNpEF4tPKNvBnu25DgX">03</span>
+              <span class="sw-card__label" data-page-node-id="ryUgdnhvZEdpVWot8F8xAY">医疗智能审核系统<i data-page-node-id="ouwQhSS7jONjGLf4lA14N5">医疗审核+运营COP</i></span>
             </div>
           </a>
-          <a class="sw-card" href="project-04.html" data-cursor="hover">
-            <div class="sw-card__media sw-card__media--04">
-              <span class="sw-card__tag">04</span>
-              <span class="sw-card__label">小额快赔小程序<i>移动端小额快速理赔场景</i></span>
+          <a class="sw-card" href="project-04.html" data-cursor="hover" data-page-node-id="8dRHUy1RxiGcyXgTecjGRm">
+            <div class="sw-card__media sw-card__media--04" data-page-node-id="467LSUQZsDS2KsPN17KtmO">
+              <span class="sw-card__tag" data-page-node-id="q0bh1OJeH4fAmHAtJlEszq">04</span>
+              <span class="sw-card__label" data-page-node-id="oGVl01PmIZsHU1FoRUw3l4">小额快赔小程序<i data-page-node-id="2S6onw3xr9akqU74Ui5p59">移动端小额快速理赔场景</i></span>
             </div>
           </a>
-          <a class="sw-card" href="project-05.html" data-cursor="hover">
-            <div class="sw-card__media sw-card__media--05">
-              <span class="sw-card__tag">05</span>
-              <span class="sw-card__label">海康online小程序<i>技术服务业务线</i></span>
+          <a class="sw-card" href="project-05.html" data-cursor="hover" data-page-node-id="B1QuOO9HC1K3J8qMrCI5hX">
+            <div class="sw-card__media sw-card__media--05" data-page-node-id="uHQ5jGf7GBJfjpa14uKmfc">
+              <span class="sw-card__tag" data-page-node-id="ml5GEBPZdZR3hsTz6cVolT">05</span>
+              <span class="sw-card__label" data-page-node-id="myJIp4i5WJvcrJRExoub7L">海康online小程序<i data-page-node-id="pYSZKpsxkRktVKL5iDsZUc">技术服务业务线</i></span>
             </div>
           </a>
-          <a class="sw-card" href="project-06.html" data-cursor="hover">
-            <div class="sw-card__media sw-card__media--06">
-              <span class="sw-card__tag">06</span>
-              <span class="sw-card__label">智慧水务一体化大屏<i>G端公共事业大屏业务</i></span>
+          <a class="sw-card" href="project-06.html" data-cursor="hover" data-page-node-id="NR7ZQC1OQJqhmxDPFTocQr">
+            <div class="sw-card__media sw-card__media--06" data-page-node-id="Iw0qgAnhBcgC0lwCDuMnhK">
+              <span class="sw-card__tag" data-page-node-id="H5sXeD5pA3ObDT1hXIUws5">06</span>
+              <span class="sw-card__label" data-page-node-id="jhRTcUEQ2FI3oDEBQd0hYE">智慧水务一体化大屏<i data-page-node-id="Yk495BdqdhjdqW7bDT4rfK">G端公共事业大屏业务</i></span>
             </div>
           </a>
-          <a class="sw-card is-current" href="project-07.html" data-cursor="hover">
-            <div class="sw-card__media sw-card__media--07">
-              <span class="sw-card__tag">07</span>
-              <span class="sw-card__label">动效、AIGC、插画等<i>其他能力</i></span>
+          <a class="sw-card is-current" href="project-07.html" data-cursor="hover" data-page-node-id="OXAwJjUqbAOYLL2msfFKrY">
+            <div class="sw-card__media sw-card__media--07" data-page-node-id="8xHHu733GcOKQg4w7OlAZR">
+              <span class="sw-card__tag" data-page-node-id="ekIA8khS6n359gMCquaUBk">07</span>
+              <span class="sw-card__label" data-page-node-id="M0SKDDWqaPwt9twYnoXu02">动效、AIGC、插画等<i data-page-node-id="qwqktB02yzZC3MXRJdWrxt">其他能力</i></span>
             </div>
           </a>
         </div>
       </div>
-      <a class="nav__contact" href="../index.html#contact" data-cursor="hover">联系我 <i>/ Contact</i></a>
+      <a class="nav__contact" href="../index.html#contact" data-cursor="hover" data-page-node-id="ZpymyKZjHxsnReQefDKhUB">联系我 <i data-page-node-id="Hqu658ZjnFkgFJSXUaAUvR">/ Contact</i></a>
     </nav>
   </header>
-  <main>
-    <div class="p-pdf">
-      <img class="p-pdf__page" id="page-01" src="../assets/pdf/pages-07/page-01.png?v=273df401" alt="动效、AIGC、插画等 详情 第 1 页" loading="eager" />
-      <img class="p-pdf__page" id="page-02" src="../assets/pdf/pages-07/page-02.png?v=273df401" alt="动效、AIGC、插画等 详情 第 2 页" loading="lazy" />
-      <img class="p-pdf__page" id="page-03" src="../assets/pdf/pages-07/page-03.png?v=273df401" alt="动效、AIGC、插画等 详情 第 3 页" loading="lazy" />
+  <main data-page-node-id="qQzwW1n8bwURlxPrptRc4o">
+    <div class="p-pdf" data-page-node-id="1imDz8dURmLAMPIxXR3lS4">
+      <div class="p-video" data-page-node-id="kJm33iKZvn7Fc33DrfCQ09">
+        <div class="p-video__label" data-page-node-id="bMUWN8JkYHKk66L7CY03lr">延展动图 / Extended Motion</div>
+        <video class="p-video__frame" src="../assets/video/project-07-extended.mp4"
+               controls loop muted playsinline preload="metadata" data-page-node-id="WHSNe1uvlfqiAFezuZTElx"></video>
+      </div>
+      <img class="p-pdf__page" id="page-01" src="../assets/pdf/pages-07/page-01.png?v=273df401" alt="动效、AIGC、插画等 详情 第 1 页" loading="eager" data-page-node-id="rTUTAibum5sH02q5Vzrbkx" />
+      <img class="p-pdf__page" id="page-02" src="../assets/pdf/pages-07/page-02.png?v=273df401" alt="动效、AIGC、插画等 详情 第 2 页" loading="lazy" data-page-node-id="RFe9Z4lxPaXH7oJjibZuXP" />
+      <img class="p-pdf__page" id="page-03" src="../assets/pdf/pages-07/page-03.png?v=273df401" alt="动效、AIGC、插画等 详情 第 3 页" loading="lazy" data-page-node-id="zvbBwetJG5SylfTDEqQD0q" />
     </div>
-    <nav class="p-back">
-      <a href="../index.html#work" data-cursor="hover">← 返回作品列表</a>
+    <nav class="p-back" data-page-node-id="QrYXNNumGBZs1g1LtkI1OK">
+      <a href="../index.html#work" data-cursor="hover" data-page-node-id="AFdb97BdYV2tvC441wC9Lo">← 返回作品列表</a>
     </nav>
-    <footer class="footer" style="max-width:1240px;">
-      <span>© <span id="year"></span> zlq. ALL RIGHTS RESERVED.</span>
-      <a href="../index.html#hero" data-cursor="hover">BACK TO TOP ↑</a>
+    <footer class="footer" style="max-width:1240px;" data-page-node-id="7iVkjF0SYRZjBWXwFUM0dA">
+      <span data-page-node-id="dz8Yw9QEKcjqyy0aQwakOx">© <span id="year" data-page-node-id="VMYKNBsmxLqwK9O67LyK7E"></span> zlq. ALL RIGHTS RESERVED.</span>
+      <a href="../index.html#hero" data-cursor="hover" data-page-node-id="LQEPGXoqIEqTDJIR0cz9LQ">BACK TO TOP ↑</a>
     </footer>
   </main>
   <script src="../assets/js/main.js"></script>
